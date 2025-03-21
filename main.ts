@@ -1,11 +1,3 @@
-/**
- * Functions are mapped to blocks using various macros
- * in comments starting with %. The most important macro
- * is "block", and it specifies that a block should be
- * generated for an **exported** function.
- */
-
-//% color="#465c1b" weight=100
 namespace TimeEvents {
     //% block="set up clock with|total seconds $total_seconds|chunk size $chunk_size"
     //% total_seconds.min=1 total_seconds.max=600 total_seconds.defl=60
@@ -56,13 +48,6 @@ namespace TimeEvents {
             } else if (clock_run_time >= millis_limit) {
                 started = false
                 clock_done = true
-                basic.showLeds(`
-                    . . . . .
-                    . . # . .
-                    . # # # .
-                    . . # . .
-                    . . . . .
-                    `)
                 control.raiseEvent(
                     700,
                     2
